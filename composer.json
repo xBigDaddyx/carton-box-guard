@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "teresa/carton-box-guard",
+    "description": "CartonBoxGuard is a cutting-edge Laravel package designed to revolutionize the accuracy of carton box content management. Ensuring the correct items are packed within carton boxes is essential for businesses that handle the shipping and distribution of products. Accidental errors can result in costly returns, customer dissatisfaction, and logistical nightmares. CartonBoxGuard is here to put an end to these issues.",
     "keywords": [
-        ":vendor_name",
+        "Teresa",
         "laravel",
-        ":package_slug"
+        "carton-box-guard"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/teresa/carton-box-guard",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Faisal Yusuf",
+            "email": "yussupcazzanova97@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,24 +30,23 @@
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Teresa\\CartonBoxGuard\\": "src/",
+            "Teresa\\CartonBoxGuard\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Teresa\\CartonBoxGuard\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-carton-box-guard --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +72,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Teresa\\CartonBoxGuard\\CartonBoxGuardServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "CartonBoxGuard": "Teresa\\CartonBoxGuard\\Facades\\CartonBoxGuard"
             }
         }
     },

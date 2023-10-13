@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Teresa\CartonBoxGuard\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class CartonBoxGuardCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'carton-box-guard';
 
     public $description = 'My command';
 
