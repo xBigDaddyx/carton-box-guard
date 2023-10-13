@@ -2,7 +2,6 @@
 
 namespace Teresa\CartonBoxGuard\Repositories;
 
-
 use App\Models\CartonBox;
 use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 

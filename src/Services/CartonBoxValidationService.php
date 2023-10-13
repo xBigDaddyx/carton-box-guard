@@ -9,7 +9,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
     public function validateSolid($cartonBox, $polybag)
     {
         if ($cartonBox->polybag !== $polybag) {
-            return "Polybag tidak sesuai";
+            return 'Polybag tidak sesuai';
         }
 
         return null; // Validasi solid berhasil
@@ -18,7 +18,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
     public function validateRatio($cartonBox, $garmentLabel, $packingList, $polybag)
     {
         if ($cartonBox->garmentLabel !== $garmentLabel) {
-            return "Garment tidak sesuai";
+            return 'Garment tidak sesuai';
         }
 
         // Implementasikan validasi lain sesuai dengan aturan yang Anda sebutkan
