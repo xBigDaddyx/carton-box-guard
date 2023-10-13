@@ -18,14 +18,30 @@ class CartonBoxRepository
         $this->model = $this->getModel();
     }
 
+<<<<<<< HEAD
     public function validateCarton($box_code)
+=======
+    public function validateCarton(string $box_code)
+>>>>>>> 4861593 (fix model)
     {
-        return $this->model->where('box_code', $box_code);
+        return $this->model = $this->model->where('box_code', $box_code)->first();
     }
+<<<<<<< HEAD
 
     public function validateSolid($cartonBox, $polybag)
+=======
+    public function validatePolybag($current_polybag)
+>>>>>>> 4861593 (fix model)
     {
-        return $this->validationService->validateSolid($cartonBox, $polybag);
+        if ($this->model->type === 'SOLID') {
+            return $this->validateSolid($current_polybag);
+        }
+        return 'Selain SOLID';
+    }
+    public function validateSolid($current_polybag)
+    {
+
+        return $this->validationService->validateSolid($this->model, $current_polybag);
     }
 
     public function validateRatio($cartonBox, $garmentLabel, $packingList, $polybag)
