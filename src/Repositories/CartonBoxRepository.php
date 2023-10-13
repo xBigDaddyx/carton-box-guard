@@ -22,13 +22,16 @@ class CartonBoxRepository
     {
         return $this->model = $this->model->where('box_code', $box_code)->first();
     }
+
     public function validatePolybag($current_polybag)
     {
         if ($this->model->type === 'SOLID') {
             return $this->validateSolid($current_polybag);
         }
+
         return 'Selain SOLID';
     }
+
     public function validateSolid($current_polybag)
     {
 

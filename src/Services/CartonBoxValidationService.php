@@ -3,12 +3,10 @@
 namespace Teresa\CartonBoxGuard\Services;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
 use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 
 class CartonBoxValidationService implements CartonBoxValidationInterface
 {
-
     public function validateSolid(Model $cartonBox, string $current_polybag)
     {
 
@@ -19,7 +17,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
         }
 
         //insert polybag
-        return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+        return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
 
     }
 
