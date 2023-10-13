@@ -18,8 +18,6 @@ class CartonBoxGuardServiceProvider extends PackageServiceProvider
         $package
             ->name('carton-box-guard')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_carton-box-guard_table')
             ->hasCommand(CartonBoxGuardCommand::class);
     }
 }
