@@ -9,6 +9,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
     public function validateCarton($box_code)
     {
     }
+
     public function validateSolid($cartonBox, $polybag)
     {
         if ($cartonBox->polybag !== $polybag) {
