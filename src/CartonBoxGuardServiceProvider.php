@@ -18,6 +18,7 @@ class CartonBoxGuardServiceProvider extends PackageServiceProvider
         $package
             ->name('carton-box-guard')
             ->hasConfigFile()
+            ->publishesServiceProvider('CartonBoxGuardServiceProvider')
             ->hasCommand(CartonBoxGuardCommand::class);
     }
 }
