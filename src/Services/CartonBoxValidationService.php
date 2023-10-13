@@ -11,20 +11,11 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
 
     public function validateSolid(Model $cartonBox, string $current_polybag)
     {
-<<<<<<< HEAD
-    }
-
-    public function validateSolid($cartonBox, $polybag)
-    {
-        if ($cartonBox->polybag !== $polybag) {
-            return 'Polybag tidak sesuai';
-=======
 
         if (count($cartonBox->polybags) > 0) {
             if ($current_polybag !== $cartonBox->polybags->first()->polybag_code) {
                 return 'Polybag tidak sesuai';
             }
->>>>>>> 4861593 (fix model)
         }
 
         //insert polybag

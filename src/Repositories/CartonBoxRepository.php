@@ -18,20 +18,11 @@ class CartonBoxRepository
         $this->model = $this->getModel();
     }
 
-<<<<<<< HEAD
-    public function validateCarton($box_code)
-=======
     public function validateCarton(string $box_code)
->>>>>>> 4861593 (fix model)
     {
         return $this->model = $this->model->where('box_code', $box_code)->first();
     }
-<<<<<<< HEAD
-
-    public function validateSolid($cartonBox, $polybag)
-=======
     public function validatePolybag($current_polybag)
->>>>>>> 4861593 (fix model)
     {
         if ($this->model->type === 'SOLID') {
             return $this->validateSolid($current_polybag);
