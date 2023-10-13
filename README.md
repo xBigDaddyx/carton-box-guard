@@ -1,4 +1,5 @@
-# CartonBoxGuard is a cutting-edge Laravel package designed to revolutionize the accuracy of carton box content management. Ensuring the correct items are packed within carton boxes is essential for businesses that handle the shipping and distribution of products. Accidental errors can result in costly returns, customer dissatisfaction, and logistical nightmares. CartonBoxGuard is here to put an end to these issues.
+# Description
+CartonBoxGuard is a cutting-edge Laravel package designed to revolutionize the accuracy of carton box content management. Ensuring the correct items are packed within carton boxes is essential for businesses that handle the shipping and distribution of products. Accidental errors can result in costly returns, customer dissatisfaction, and logistical nightmares. CartonBoxGuard is here to put an end to these issues.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/teresa/carton-box-guard.svg?style=flat-square)](https://packagist.org/packages/teresa/carton-box-guard)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/teresa/carton-box-guard/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/teresa/carton-box-guard/actions?query=workflow%3Arun-tests+branch%3Amain)
