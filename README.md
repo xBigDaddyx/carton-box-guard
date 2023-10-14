@@ -2,8 +2,6 @@
 CartonBoxGuard is a cutting-edge Laravel package designed to revolutionize the accuracy of carton box content management. Ensuring the correct items are packed within carton boxes is essential for businesses that handle the shipping and distribution of products. Accidental errors can result in costly returns, customer dissatisfaction, and logistical nightmares. CartonBoxGuard is here to put an end to these issues.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/teresa/carton-box-guard.svg?style=flat-square)](https://packagist.org/packages/teresa/carton-box-guard)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/teresa/carton-box-guard/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/teresa/carton-box-guard/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/teresa/carton-box-guard/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/teresa/carton-box-guard/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/teresa/carton-box-guard.svg?style=flat-square)](https://packagist.org/packages/teresa/carton-box-guard)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
