@@ -19,6 +19,7 @@ class Polybag extends Model
     protected $fillable = [];
 
     protected $guarded = [];
+
     public function prefixable(): array
     {
         return [
@@ -27,6 +28,7 @@ class Polybag extends Model
             'company_short_name' => Auth::user()->company->short_name,
         ];
     }
+
     protected $dispatchesEvents = [
 
         'created' => PolybagCreated::class,
@@ -35,11 +37,11 @@ class Polybag extends Model
 
     public function __construct(array $attributes = [])
     {
-        if (!isset($this->connection)) {
+        if (! isset($this->connection)) {
             $this->setConnection(config('carton-box-guard.database_connection'));
         }
 
-        if (!isset($this->table)) {
+        if (! isset($this->table)) {
             $this->setTable(config('carton-box-guard.polybag.table_name'));
         }
 
