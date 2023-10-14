@@ -5,12 +5,9 @@ namespace Teresa\CartonBoxGuard\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Teresa\CartonBoxGuard\Events\PolybagCreated;
-use Teresa\CartonBoxGuard\Traits\HasStringId;
 
 class Polybag extends Model
 {
-
-
     protected $keyType = 'string';
 
     protected $primaryKey = 'id';
@@ -18,8 +15,6 @@ class Polybag extends Model
     protected $fillable = [];
 
     protected $guarded = [];
-
-
 
     protected $dispatchesEvents = [
         'created' => PolybagCreated::class,

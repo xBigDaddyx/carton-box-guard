@@ -5,19 +5,14 @@ namespace Teresa\CartonBoxGuard\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Teresa\CartonBoxGuard\Traits\HasStringId;
 
 class CartonBox extends Model
 {
-
-
     protected $primary = 'id';
 
     protected $keyType = 'string';
 
     protected $primaryKey = 'id';
-
-
 
     public function __construct(array $attributes = [])
     {
