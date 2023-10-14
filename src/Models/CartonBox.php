@@ -10,11 +10,13 @@ use Teresa\CartonBoxGuard\Traits\HasStringId;
 class CartonBox extends Model
 {
     use HasStringId;
+
     protected $primary = 'id';
 
     protected $keyType = 'string';
 
     protected $primaryKey = 'id';
+
     public function prefixable(): array
     {
         return [
@@ -22,13 +24,14 @@ class CartonBox extends Model
             'id_company_prefix' => auth()->user()->company->short_name,
         ];
     }
+
     public function __construct(array $attributes = [])
     {
-        if (!isset($this->connection)) {
+        if (! isset($this->connection)) {
             $this->setConnection(config('carton-box-guard.database_connection'));
         }
 
-        if (!isset($this->table)) {
+        if (! isset($this->table)) {
             $this->setTable(config('carton-box-guard.carton.table_name'));
         }
 

@@ -8,26 +8,27 @@ trait HasStringId
     {
         static::creating(function ($model) {
             $settings = $model->prefixable();
-            $count = ($model::where('id', 'like', $settings['id_company_prefix'] . '%')->withTrashed()->count() + 1);
+            $count = ($model::where('id', 'like', $settings['id_company_prefix'].'%')->withTrashed()->count() + 1);
 
             if ($count < 10) {
-                $number = '000000' . $count;
+                $number = '000000'.$count;
             } elseif ($count >= 10 && $count < 100) {
-                $number = '00000' . $count;
+                $number = '00000'.$count;
             } elseif ($count >= 100 && $count < 1000) {
-                $number = '0000' . $count;
+                $number = '0000'.$count;
             } elseif ($count >= 1000 && $count < 10000) {
-                $number = '000' . $count;
+                $number = '000'.$count;
             } elseif ($count >= 10000 && $count < 100000) {
-                $number = '00' . $count;
+                $number = '00'.$count;
             } elseif ($count >= 100000 && $count < 1000000) {
-                $number = '0' . $count;
+                $number = '0'.$count;
             } else {
                 $number = $count;
             }
             $model->company_id = $settings['id_company_prefix'];
-            $model->id = auth()->user()->company->short_name . $settings['id_prefix'] . $number;
+            $model->id = auth()->user()->company->short_name.$settings['id_prefix'].$number;
         });
     }
+
     abstract public function prefixable(): array;
 }
