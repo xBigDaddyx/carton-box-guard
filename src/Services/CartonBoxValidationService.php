@@ -18,9 +18,8 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
                     return 'Polybag tidak sesuai';
                 }
             }
-            $id = IdGenerator::generate(['table' => 'polybags', 'length' => 15, 'prefix' => Auth::user()->company->id.'.PB.']);
-            //output: INV-000001
-            $value = new Polybag(['polybag_code' => $current_polybag, 'id' => $id]);
+
+            $value = new Polybag(['polybag_code' => $current_polybag]);
 
             $cartonBox->polybags()->save($value);
 
