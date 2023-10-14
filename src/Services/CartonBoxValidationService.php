@@ -19,8 +19,10 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
             $value = new Polybag(['polybag_code' => $current_polybag]);
 
             event(new PolybagCreated($cartonBox->polybags()->save($value)));
-            return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+
+            return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
         }
+
         return 'carton box completed.';
     }
 
