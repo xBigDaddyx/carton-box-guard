@@ -4,7 +4,6 @@ namespace Teresa\CartonBoxGuard\Listeners;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Teresa\CartonBoxGuard\Events\PolybagCreated;
 use Teresa\CartonBoxGuard\Models\CartonBox;
 
