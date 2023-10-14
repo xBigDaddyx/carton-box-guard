@@ -9,7 +9,7 @@ use Teresa\CartonBoxGuard\Traits\HasStringId;
 
 class Polybag extends Model
 {
-    use HasStringId;
+
 
     protected $keyType = 'string';
 
@@ -19,12 +19,7 @@ class Polybag extends Model
 
     protected $guarded = [];
 
-    public function prefixable(): array
-    {
-        return [
-            'id_prefix' => 'PB',
-        ];
-    }
+
 
     protected $dispatchesEvents = [
         'created' => PolybagCreated::class,

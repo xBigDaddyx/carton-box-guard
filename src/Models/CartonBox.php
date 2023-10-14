@@ -9,7 +9,7 @@ use Teresa\CartonBoxGuard\Traits\HasStringId;
 
 class CartonBox extends Model
 {
-    use HasStringId;
+
 
     protected $primary = 'id';
 
@@ -17,12 +17,7 @@ class CartonBox extends Model
 
     protected $primaryKey = 'id';
 
-    public function prefixable(): array
-    {
-        return [
-            'id_prefix' => 'CB',
-        ];
-    }
+
 
     public function __construct(array $attributes = [])
     {
