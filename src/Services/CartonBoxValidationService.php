@@ -21,7 +21,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
             event(new PolybagCreated($cartonBox->polybags()->save($value)));
             return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
         }
-        return 'carton box completed.'
+        return 'carton box completed.';
     }
 
     public function validateRatio($cartonBox, $garmentLabel, $packingList, $polybag)
