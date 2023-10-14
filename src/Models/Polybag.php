@@ -4,6 +4,7 @@ namespace Teresa\CartonBoxGuard\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Teresa\CartonBoxGuard\Events\PolybagCreated;
 use Teresa\CartonBoxGuard\Traits\HasStringId;
@@ -11,7 +12,7 @@ use Teresa\CartonBoxGuard\Traits\HasStringId;
 class Polybag extends Model
 {
     use HasStringId;
-
+    use SoftDeletes;
     protected $keyType = 'string';
 
     protected $primaryKey = 'id';
