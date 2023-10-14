@@ -24,8 +24,6 @@ class Polybag extends Model
     {
         return [
             'id_prefix' => 'PB',
-            'company_id' => Auth::user()->company->id,
-            'company_short_name' => Auth::user()->company->short_name,
         ];
     }
 
@@ -36,11 +34,11 @@ class Polybag extends Model
 
     public function __construct(array $attributes = [])
     {
-        if (! isset($this->connection)) {
+        if (!isset($this->connection)) {
             $this->setConnection(config('carton-box-guard.database_connection'));
         }
 
-        if (! isset($this->table)) {
+        if (!isset($this->table)) {
             $this->setTable(config('carton-box-guard.polybag.table_name'));
         }
 
