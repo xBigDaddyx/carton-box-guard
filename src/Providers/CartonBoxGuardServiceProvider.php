@@ -14,7 +14,7 @@ class CartonBoxGuardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Event::listen(PolybagCreated::class, CompletedCartonBox::class);
+        Event::listen(PolybagCreated::class, [CompletedCartonBox::class, 'handle']);
     }
 
     public function register(): void
