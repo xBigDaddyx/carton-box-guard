@@ -27,7 +27,7 @@ class CompletedCartonBox
      */
     public function handle(PolybagCreated $event)
     {
-        $max_quantity = $event->quantity;
+        $max_quantity = $event->carton->quantity;
         $carton = CartonBox::find($event->carton->id);
         $polybags_count = $carton->polybags->count();
 
