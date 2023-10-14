@@ -42,6 +42,7 @@ class CartonBoxRepository
     {
         return $this->validationService->validateRatio($cartonBox, $garmentLabel, $packingList, $polybag);
     }
+
     public function getMaxPolybagQuantity()
     {
         return $this->cartonModel->quantity;

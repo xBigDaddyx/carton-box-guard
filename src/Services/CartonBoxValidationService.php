@@ -7,7 +7,7 @@ use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 
 class CartonBoxValidationService implements CartonBoxValidationInterface
 {
-    public function validateSolid(Model $cartonBox, string $current_polybag,)
+    public function validateSolid(Model $cartonBox, string $current_polybag)
     {
         $max_polybag = $cartonBox->quantity;
 
@@ -21,7 +21,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
         }
 
         //insert polybag
-        return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+        return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
 
     }
 

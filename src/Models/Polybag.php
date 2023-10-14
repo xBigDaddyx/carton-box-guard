@@ -14,18 +14,20 @@ class Polybag extends Model
     protected $fillable = [];
 
     protected $guarded = [];
+
     public function __construct(array $attributes = [])
     {
-        if (!isset($this->connection)) {
+        if (! isset($this->connection)) {
             $this->setConnection(config('carton-box-guard.database_connection'));
         }
 
-        if (!isset($this->table)) {
+        if (! isset($this->table)) {
             $this->setTable(config('carton-box-guard.polybag.table_name'));
         }
 
         parent::__construct($attributes);
     }
+
     public function cartonBox(): BelongsTo
     {
         return $this->belongsTo(CartonBox::class);

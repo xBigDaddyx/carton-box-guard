@@ -2,12 +2,8 @@
 
 namespace Teresa\CartonBoxGuard\Listeners;
 
-
 use Carbon\Carbon;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Teresa\CartonBoxGuard\Events\PolybagCreated;
 use Teresa\CartonBoxGuard\Models\CartonBox;
 
