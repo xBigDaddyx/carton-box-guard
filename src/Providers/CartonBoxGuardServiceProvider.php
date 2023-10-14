@@ -16,6 +16,7 @@ class CartonBoxGuardServiceProvider extends ServiceProvider
     {
         Event::listen(PolybagCreated::class, CompletedCartonBox::class);
     }
+
     public function register(): void
     {
         $this->app->bind('CartonBoxRepository', CartonBoxRepository::class);
