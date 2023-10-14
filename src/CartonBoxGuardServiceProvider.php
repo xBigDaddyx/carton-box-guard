@@ -27,12 +27,12 @@ class CartonBoxGuardServiceProvider extends PackageServiceProvider
             ->hasCommand(CartonBoxGuardCommand::class);
     }
 
-    public function packageBooted()
+    public function bootingPackage()
     {
         Event::listen(PolybagCreated::class, CompletedCartonBox::class);
     }
 
-    public function packageRegistered()
+    public function registeringPackage()
     {
         $this->app->bind('CartonBoxRepository', CartonBoxRepository::class);
         $this->app->bind(CartonBoxValidationInterface::class, CartonBoxValidationService::class);
