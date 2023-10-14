@@ -3,7 +3,6 @@
 namespace Teresa\CartonBoxGuard\Services;
 
 use Illuminate\Database\Eloquent\Model;
-use Teresa\CartonBoxGuard\Events\PolybagCreated;
 use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 use Teresa\CartonBoxGuard\Models\Polybag;
 
@@ -19,7 +18,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
 
             $cartonBox->polybags()->save($value);
 
-            return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+            return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
         }
 
         return 'carton box completed.';
