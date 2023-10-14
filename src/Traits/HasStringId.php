@@ -6,8 +6,7 @@ trait HasStringId
 {
     public static function bootHasStringId()
     {
-        parent::bootHasStringId();
-        self::creating(function ($model) {
+        static::creating(function ($model) {
             $settings = $model->prefixable();
             $count = ($model::where('id', 'like', $settings['company_short_name'].'%')->withTrashed()->count() + 1);
 
