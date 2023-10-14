@@ -2,9 +2,7 @@
 
 namespace Teresa\CartonBoxGuard\Services;
 
-use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
 use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 use Teresa\CartonBoxGuard\Models\Polybag;
 
