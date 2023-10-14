@@ -3,7 +3,6 @@
 namespace Teresa\CartonBoxGuard\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Teresa\CartonBoxGuard\Repositories\CartonBoxRepository;
 
 /**
  * @see \Teresa\CartonBoxGuard\CartonBoxGuard
