@@ -7,6 +7,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Teresa\CartonBoxGuard\Models\Polybag;
 
 class PolybagCreated
 {
@@ -19,9 +20,9 @@ class PolybagCreated
      *
      * @return void
      */
-    public function __construct($carton)
+    public function __construct(Polybag $polybag)
     {
-        $this->carton = $carton;
+        $this->carton = $polybag->cartonBox;
     }
 
     // /**
