@@ -11,7 +11,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
     public function validateSolid(Model $cartonBox, string $current_polybag)
     {
         if ($cartonBox->is_completed !== true) {
-            if (! empty($cartonBox->polybags->first()->polybag_code)) {
+            if (!empty($cartonBox->polybags->first()->polybag_code)) {
                 if ($current_polybag !== $cartonBox->polybags->first()->polybag_code) {
                     return 'Polybag tidak sesuai';
                 }
@@ -21,7 +21,7 @@ class CartonBoxValidationService implements CartonBoxValidationInterface
 
             $cartonBox->polybags()->save($value);
 
-            return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+            return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
         }
 
         return 'carton box completed.';
