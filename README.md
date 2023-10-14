@@ -24,13 +24,6 @@ You can install the package via composer:
 composer require teresa/carton-box-guard
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="carton-box-guard-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -41,14 +34,24 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'carton' => [
+        'model' => '',
+        'table_name' => 'carton_boxes',
+    ],
+    'polybag' => [
+        'model' => '',
+        'table_name' => 'polybags',
+    ],
+    'database_connection' => 'teresa_box',
 ];
 ```
 
-Optionally, you can publish the views using
+Add CartonBoxGuardServiceProvider on your config/app.php
 
-```bash
-php artisan vendor:publish --tag="carton-box-guard-views"
+```php
+\Teresa\CartonBoxGuard\Providers\CartonBoxGuardServiceProvider::class,
 ```
+
 
 ## Usage
 
