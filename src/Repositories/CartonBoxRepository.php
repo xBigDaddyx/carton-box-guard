@@ -10,22 +10,22 @@ class CartonBoxRepository
 {
     protected $validationService;
 
-    protected $model;
+    protected $cartonModel;
 
     public function __construct(CartonBoxValidationInterface $validationService)
     {
         $this->validationService = $validationService;
-        $this->model = $this->getModel();
+        $this->cartonModel = $this->getCartonModel();
     }
 
     public function validateCarton(string $box_code)
     {
-        return $this->model = $this->model->where('box_code', $box_code)->first();
+        return $this->cartonModel = $this->cartonModel->where('box_code', $box_code)->first();
     }
 
     public function validatePolybag($current_polybag)
     {
-        if ($this->model->type === 'SOLID') {
+        if ($this->cartonModel->type === 'SOLID') {
             return $this->validateSolid($current_polybag);
         }
 
@@ -35,17 +35,21 @@ class CartonBoxRepository
     public function validateSolid($current_polybag)
     {
 
-        return $this->validationService->validateSolid($this->model, $current_polybag);
+        return $this->validationService->validateSolid($this->cartonModel, $current_polybag);
     }
 
     public function validateRatio($cartonBox, $garmentLabel, $packingList, $polybag)
     {
         return $this->validationService->validateRatio($cartonBox, $garmentLabel, $packingList, $polybag);
     }
-
-    public function getModel()
+    public function getMaxPolybagQuantity()
     {
-        return resolve(Config::get('carton-box-guard.model'));
+        return $this->cartonModel->quantity;
+    }
+
+    public function getCartonModel()
+    {
+        return resolve(Config::get('carton-box-guard.carton.model'));
     }
     // Implementasikan metode lain yang diperlukan untuk mengelola model CartonBox
 }

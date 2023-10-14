@@ -7,17 +7,21 @@ use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
 
 class CartonBoxValidationService implements CartonBoxValidationInterface
 {
-    public function validateSolid(Model $cartonBox, string $current_polybag)
+    public function validateSolid(Model $cartonBox, string $current_polybag,)
     {
+        $max_polybag = $cartonBox->quantity;
 
         if (count($cartonBox->polybags) > 0) {
+            if (count($cartonBox->polybags) === $max_polybag) {
+                return 'Carton Box Completed';
+            }
             if ($current_polybag !== $cartonBox->polybags->first()->polybag_code) {
                 return 'Polybag tidak sesuai';
             }
         }
 
         //insert polybag
-        return 'Polybag '.$current_polybag.' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
+        return 'Polybag ' . $current_polybag . ' berhasil ditambahkan, lanjutkan'; // Validasi solid berhasil
 
     }
 

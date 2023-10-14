@@ -2,9 +2,15 @@
 
 namespace Teresa\CartonBoxGuard;
 
+use Illuminate\Support\Facades\Event;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Teresa\CartonBoxGuard\Commands\CartonBoxGuardCommand;
+use Teresa\CartonBoxGuard\Events\PolybagCreated;
+use Teresa\CartonBoxGuard\Interfaces\CartonBoxValidationInterface;
+use Teresa\CartonBoxGuard\Listeners\CompletedCartonBox;
+use Teresa\CartonBoxGuard\Repositories\CartonBoxRepository;
+use Teresa\CartonBoxGuard\Services\CartonBoxValidationService;
 
 class CartonBoxGuardServiceProvider extends PackageServiceProvider
 {
@@ -19,5 +25,14 @@ class CartonBoxGuardServiceProvider extends PackageServiceProvider
             ->name('carton-box-guard')
             ->hasConfigFile()
             ->hasCommand(CartonBoxGuardCommand::class);
+    }
+    public function packageBooted()
+    {
+        Event::listen(PolybagCreated::class, CompletedCartonBox::class);
+    }
+    public function packageRegistered()
+    {
+        $this->app->bind('CartonBoxRepository', CartonBoxRepository::class);
+        $this->app->bind(CartonBoxValidationInterface::class, CartonBoxValidationService::class);
     }
 }
