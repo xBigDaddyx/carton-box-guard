@@ -13,6 +13,7 @@ class Polybag extends Model
 {
     use HasStringId;
     use SoftDeletes;
+
     protected $keyType = 'string';
 
     protected $primaryKey = 'id';
