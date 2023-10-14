@@ -8,11 +8,11 @@ use Teresa\CartonBoxGuard\Repositories\CartonBoxRepository;
 /**
  * @see \Teresa\CartonBoxGuard\CartonBoxGuard
  */
-class CartonBoxGuard extends Facade
+class CartonBoxFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
         //return \Teresa\CartonBoxGuard\CartonBoxGuard::class;
-        return CartonBoxRepository::class;
+        return 'CartonBoxRepository';
     }
 }
