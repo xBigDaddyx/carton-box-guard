@@ -21,7 +21,8 @@ class CartonBox extends Model
     {
         return [
             'id_prefix' => 'CB',
-            'id_company_prefix' => auth()->user()->company->short_name,
+            'company_id' => auth()->user()->company->id,
+            'company_short_name' => auth()->user()->company->short_name,
         ];
     }
 

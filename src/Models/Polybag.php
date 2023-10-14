@@ -21,8 +21,9 @@ class Polybag extends Model
     public function prefixable(): array
     {
         return [
-            'id_prefix' => 'PB',
-            'id_company_prefix' => auth()->user()->company->short_name,
+            'id_prefix' => 'CB',
+            'company_id' => auth()->user()->company->id,
+            'company_short_name' => auth()->user()->company->short_name,
         ];
     }
 
